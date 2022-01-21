@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Kalkulator Covid-19</title>
+    <link rel="icon" href="./assets/icon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="myForm" class="mt-5 my-form">
+        <h1 class="text-center m-5">Kalkulator Covid-19</h1>
+        <div class="row m-3 p-1">
+          <label for="nameInput" class="col-sm-2 col-form-label"> Imię: </label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="nameInput"
+              onblur="nameFocus()"
+              placeholder="Podaj swoję imię"
+              maxlength="18"
+              minlength="3"
+            />
+          </div>
+        </div>
+        <div class="row m-3 p-1">
+          <label for="surnameInput" class="col-sm-2 col-form-label">
+            Nazwisko:
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="surnameInput"
+              onblur="surnameFocus()"
+              placeholder="Podaj swoję nawisko"
+              maxlength="18"
+              minlength="3"
+            />
+          </div>
+        </div>
+        <div class="row m-3 p-1">
+          <label for="numberInput" class="col-sm-2 col-form-label">
+            Numer telefonu:
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="number"
+              class="form-control"
+              id="numberInput"
+              onblur="numberFocus()"
+              placeholder="Podaj numer swojego telefonu"
+              minlength="9"
+              maxlength="9"
+            />
+          </div>
+        </div>
+        <div class="row m-3">
+          <label for="sexInput" class="col-sm-2 col-form-label">Płeć:</label>
+          <div class="col-sm-10">
+            <select id="sexInput">
+              <option disabled>Wybierz swoją płeć:</option>
+              <option value="Kobieta">Kobieta</option>
+              <option value="Męższczyzna">Mężczyzna</option>
+            </select>
+          </div>
+        </div>
+        <div class="row m-3">
+          <label for="radioNoInput" class="col-sm-2 col-form-label">
+            Czy jesteś zaszczepiony:
+          </label>
+          <div class="col-sm-10">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="radioVaccined"
+              id="radioYesInput"
+              class="vaccinatedInput"
+              value="Jestem zaszczepiony"
+            />
+            <label class="form-check-label" for="radioYesInput"> Jestem </label>
+            <input
+              class="form-check-input"
+              type="radio"
+              name="radioVaccined"
+              id="radioNoInput"
+              class="vaccinatedInput"
+              value="Nie jestem zaszczepiony"
+              checked
+            />
+            <label class="form-check-label" for="radioNoInput">
+              Nie jestem
+            </label>
+          </div>
+        </div>
+        <div class="row mb-3 p-1">
+          <label for="firstContactDate" class="col-sm-2 col-form-label">
+            Data kontaktu:
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="date"
+              class="form-control"
+              id="firstContactDate"
+              onblur="contactDateFocus()"
+            />
+          </div>
+        </div>
+        <div class="row mb-3 p-1">
+          <label for="firstSumptomDate" class="col-sm-2 col-form-label">
+            Data wystąpienia pierwszych objawów:
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="date"
+              class="form-control"
+              id="firstSumptomDate"
+              onblur="sumptomDateFocus()"
+              disabled
+            />
+          </div>
+        </div>
+        <div class="row mb-3 p-1">
+          <label for="testsDate" class="col-sm-2 col-form-label">
+            Data testu:
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="date"
+              class="form-control"
+              id="testsDate"
+              onblur="testDateFocus()"
+              disabled
+            />
+          </div>
+        </div>
+        <div class="row mb-3 p-1">
+          <label for="actualDate" class="col-sm-2 col-form-label">
+            Aktualna data:
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="date"
+              class="form-control"
+              id="actualDate"
+              onblur="actualDateFocus()"
+            />
+          </div>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="checkStatiut" />
+          <label class="form-check-label" for="checkStatiut"
+            >Akceptuje warunki regulaminu oraz zezwalam na przetwarzanie moich
+            danych osobowych
+          </label>
+        </div>
+        <div class="row mb-3 p-1">
+          <input
+            type="button"
+            id="myButton"
+            class="btn btn-primary"
+            value="Wyślij raport"
+          />
+        </div>
+      </form>
+    </div>
+
+    <script src="./script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
